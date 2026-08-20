@@ -1,0 +1,105 @@
+[
+  {
+    "turno": 1,
+    "input": "¿Cuántos pedidos tuvo Juan Pérez y cuánto gastó en total?",
+    "mensajes": [
+      {
+        "type": "human",
+        "content": "¿Cuántos pedidos tuvo Juan Pérez y cuánto gastó en total?"
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "tool_calls": [
+          {
+            "name": "buscar_cliente",
+            "args": {
+              "nombre": "Juan Pérez"
+            },
+            "id": "call_XGkcZZb5lrusXxNcap2iaFV1"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "Cliente encontrado: Juan Pérez (cliente_id=1)",
+        "name": "buscar_cliente",
+        "tool_call_id": "call_XGkcZZb5lrusXxNcap2iaFV1"
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "tool_calls": [
+          {
+            "name": "buscar_pedidos",
+            "args": {
+              "cliente_id": 1
+            },
+            "id": "call_1FWYW8BMuJapYfGehXmHLRWo"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "Juan Pérez tiene 2 pedido(s), gastó un total de $875.00. Último pedido: Mouse por $25.00 el 2026-05-14.",
+        "name": "buscar_pedidos",
+        "tool_call_id": "call_1FWYW8BMuJapYfGehXmHLRWo"
+      },
+      {
+        "type": "ai",
+        "content": "Juan Pérez tuvo 2 pedidos y gastó un total de $875.00. Su último pedido fue un mouse por $25.00 el 14 de mayo de 2026."
+      }
+    ]
+  },
+  {
+    "turno": 2,
+    "input": "¿Y cuál fue su último pedido?",
+    "mensajes": [
+      {
+        "type": "human",
+        "content": "¿Y cuál fue su último pedido?"
+      },
+      {
+        "type": "ai",
+        "content": "El último pedido de Juan Pérez fue un mouse por $25.00, realizado el 14 de mayo de 2026."
+      }
+    ]
+  },
+  {
+    "turno": 3,
+    "input": "Ahora quiero lo mismo pero para López.",
+    "mensajes": [
+      {
+        "type": "human",
+        "content": "Ahora quiero lo mismo pero para López."
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "tool_calls": [
+          {
+            "name": "buscar_cliente",
+            "args": {
+              "nombre": "López"
+            },
+            "id": "call_ZUL2JozXyRiYK4KuI9hA4uF6"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "El nombre 'López' es ambiguo o no es exacto. Candidatos posibles: María López, Marta López. Pedile al usuario que precise cual de estos es, o reintentá con el nombre completo.",
+        "name": "buscar_cliente",
+        "tool_call_id": "call_ZUL2JozXyRiYK4KuI9hA4uF6"
+      },
+      {
+        "type": "ai",
+        "content": "El nombre \"López\" es ambiguo, ya que hay varias coincidencias. Los candidatos posibles son María López y Marta López. ¿Podrías especificar a cuál de ellas te refieres?"
+      }
+    ]
+  },
+  {
+    "turno": "persistencia",
+    "mensajes_recuperados": 12
+  }
+]
